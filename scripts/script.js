@@ -74,7 +74,7 @@ if (menuToggle && navLinks) {
 
 // Закрытие бургер-меню по клику на пустое место (только на мобильных)
 document.addEventListener('click', function(e) {
-    if (!navLinks || !window.matchMedia('(max-width: 767px)').matches) return;
+    if (!navLinks || !window.matchMedia('(max-width: 1600px)').matches) return;
     if (!navLinks.classList.contains('site-header__list--open')) return;
     if (e.target.closest('.site-header__list') || e.target.closest('.site-header__toggle')) return;
     setMenuOpen(false);
@@ -86,7 +86,7 @@ document.addEventListener('click', function(e) {
     if (!anchor) return;
     const href = anchor.getAttribute('href');
     if (href === '#') return;
-    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const isMobile = window.matchMedia('(max-width: 1600px)').matches;
     if (anchor.getAttribute('aria-haspopup') === 'true' && isMobile) {
         e.preventDefault();
         e.stopPropagation();
@@ -165,11 +165,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Функции для слайдера
+function sliderDotsFor(sliderId) {
+    return document.querySelectorAll('.slider__dot[data-slider="' + sliderId + '"]');
+}
+
+function syncGalleryStatus(sliderId, index, total) {
+    if (sliderId !== 'galleryTrack') return;
+    const status = document.getElementById('galleryStatus');
+    if (status) status.textContent = (index + 1) + ' из ' + total;
+    const activeDot = document.querySelector('#galleryDots .slider__dot--active');
+    if (activeDot && typeof activeDot.scrollIntoView === 'function') {
+        activeDot.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }
+}
+
 function changeSlide(sliderId, direction) {
     const slider = document.getElementById(sliderId);
     if (!slider) return;
     const slides = slider.querySelectorAll('.slider__slide');
-    const dots = slider.parentElement.querySelectorAll('.slider__dot');
+    const dots = sliderDotsFor(sliderId);
     const currentIndex = parseInt(slider.dataset.currentIndex || 0, 10);
 
     let newIndex = currentIndex + direction;
@@ -186,6 +200,7 @@ function changeSlide(sliderId, direction) {
     dots.forEach((dot, index) => {
         dot.classList.toggle('slider__dot--active', index === newIndex);
     });
+    syncGalleryStatus(sliderId, newIndex, slides.length);
 }
 
 function goToSlide(sliderId, index) {
@@ -195,7 +210,7 @@ function goToSlide(sliderId, index) {
     const n = slides.length;
     if (n === 0) return;
     const i = Math.max(0, Math.min(index, n - 1));
-    const dots = slider.parentElement.querySelectorAll('.slider__dot');
+    const dots = sliderDotsFor(sliderId);
 
     slider.style.transform = `translateX(-${i * 100}%)`;
     slider.dataset.currentIndex = String(i);
@@ -203,9 +218,26 @@ function goToSlide(sliderId, index) {
     dots.forEach((dot, j) => {
         dot.classList.toggle('slider__dot--active', j === i);
     });
+    syncGalleryStatus(sliderId, i, n);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    const galleryTrack = document.getElementById('galleryTrack');
+    const galleryDots = document.getElementById('galleryDots');
+    if (galleryTrack && galleryDots && !galleryDots.childElementCount) {
+        const slides = galleryTrack.querySelectorAll('.slider__slide');
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'slider__dot' + (index === 0 ? ' slider__dot--active' : '');
+            dot.dataset.slider = 'galleryTrack';
+            dot.dataset.index = String(index);
+            dot.setAttribute('aria-label', 'Фотография ' + (index + 1) + ' из ' + slides.length);
+            galleryDots.appendChild(dot);
+        });
+        syncGalleryStatus('galleryTrack', 0, slides.length);
+    }
+
     const sliders = document.querySelectorAll('.slider__track');
     const sliderDots = document.querySelectorAll('.slider__dot');
 
@@ -213,20 +245,11 @@ document.addEventListener('DOMContentLoaded', function() {
         slider.dataset.currentIndex = 0;
     });
     sliderDots.forEach((dot) => {
+        if (dot.closest('.gallery')) return;
         dot.removeAttribute('role');
         dot.removeAttribute('tabindex');
         dot.removeAttribute('aria-label');
         dot.setAttribute('aria-hidden', 'true');
-    });
-    sliders.forEach((track) => {
-        const id = track.id;
-        if (!id) return;
-        const dots = Array.from(track.parentElement.querySelectorAll('.slider__dot')).filter(
-            (d) => d.dataset.slider === id
-        );
-        dots.forEach((dot) => {
-            dot.setAttribute('aria-hidden', 'true');
-        });
     });
 
     document.addEventListener('click', function(e) {
@@ -269,6 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const touchEndX = endTouch.clientX;
             const diff = touchStartX - touchEndX;
             if (Math.abs(diff) < swipeThreshold) return;
+            container.dataset.swiped = '1';
+            window.setTimeout(function () { delete container.dataset.swiped; }, 400);
             changeSlide(sliderEl.id, diff > 0 ? 1 : -1);
         }, { passive: true });
     });
@@ -395,7 +420,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const singleSlide = lightboxSlideData.length <= 1;
             if (lightboxPrev) lightboxPrev.hidden = singleSlide;
             if (lightboxNext) lightboxNext.hidden = singleSlide;
-            lightboxDots.hidden = singleSlide;
+            lightboxDots.hidden = singleSlide || lbN > 12;
+            const lightboxCounter = lightbox.querySelector('.lightbox__counter');
+            if (lightboxCounter) {
+                lightboxCounter.hidden = lbN <= 1;
+                lightboxCounter.textContent = (start + 1) + ' из ' + lbN;
+            }
             lightbox.classList.toggle('lightbox--single', singleSlide);
             lightbox.removeAttribute('hidden');
             lightbox.setAttribute('data-open', 'true');
@@ -415,8 +445,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return {
                     src: img ? img.getAttribute('src') || img.src : '',
                     alt: img ? img.alt : '',
-                    title: h3 ? h3.textContent : '',
-                    desc: p ? p.textContent : ''
+                    title: slide.getAttribute('data-title') || (h3 ? h3.textContent : ''),
+                    desc: slide.getAttribute('data-desc') || (p ? p.textContent : '')
                 };
             });
             lightboxReturnFocus = document.activeElement;
@@ -452,13 +482,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 dot.classList.toggle('lightbox__dot--active', i === lightboxCurrentIndex);
             });
             updateLightboxCaption();
+            const lightboxCounter = lightbox.querySelector('.lightbox__counter');
+            if (lightboxCounter) {
+                lightboxCounter.hidden = n <= 1;
+                lightboxCounter.textContent = (lightboxCurrentIndex + 1) + ' из ' + n;
+            }
         }
 
         document.querySelectorAll('[data-lightbox]').forEach(group => {
             const triggers = Array.from(group.querySelectorAll('[data-full]'));
             triggers.forEach((trigger, index) => {
                 trigger.addEventListener('click', () => {
-                    const data = triggers.map(el => {
+                    const visible = triggers.filter((el) => !el.classList.contains('is-hidden'));
+                    const data = visible.map(el => {
                         const img = el.querySelector('img');
                         return {
                             src: el.getAttribute('data-full') || '',
@@ -468,15 +504,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         };
                     });
                     lightboxReturnFocus = trigger;
-                    showLightbox(data, index);
+                    showLightbox(data, Math.max(0, visible.indexOf(trigger)));
                 });
             });
         });
 
-        document.querySelectorAll('.events .slider__container').forEach(container => {
+        document.querySelectorAll('.events .slider__container, .gallery .slider__container').forEach(container => {
             const sliderEl = container.querySelector('.slider__track');
             if (!sliderEl) return;
             container.addEventListener('click', function(e) {
+                if (container.dataset.swiped === '1') return;
                 if (e.target.closest('.slider__arrow') || e.target.closest('.slider__dot')) return;
                 if (e.target.closest('.slider__slide')) {
                     e.preventDefault();
@@ -777,6 +814,86 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.gallery__card').forEach((btn) => {
     const img = btn.querySelector('img');
     if (img && img.alt) btn.setAttribute('aria-label', img.alt);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.awards__filter').forEach((button) => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            document.querySelectorAll('.awards__filter').forEach((other) => {
+                const active = other === button;
+                other.classList.toggle('is-active', active);
+                other.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+            document.querySelectorAll('#awardsGrid .awards__card').forEach((card) => {
+                const show = filter === 'all' || card.dataset.type === filter;
+                card.classList.toggle('is-hidden', !show);
+            });
+            const group = document.querySelector('#awardsGrid .awards__group');
+            if (group) group.hidden = filter !== 'all' && filter !== 'gramota';
+        });
+    });
+
+    document.querySelectorAll('.materials__toggle').forEach((button) => {
+        button.addEventListener('click', () => {
+            const panel = document.getElementById(button.getAttribute('aria-controls'));
+            if (!panel) return;
+            const willOpen = button.getAttribute('aria-expanded') !== 'true';
+            button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            panel.hidden = !willOpen;
+            const cat = button.closest('.materials__cat');
+            if (cat) cat.classList.toggle('is-open', willOpen);
+        });
+    });
+
+    const awardsValue = document.getElementById('statAwards');
+    const awardCards = document.querySelectorAll('#awardsGrid [data-award]');
+    if (awardsValue && awardCards.length) {
+        const target = awardCards.length;
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const paint = () => {
+            if (reduce) {
+                awardsValue.textContent = String(target);
+                return;
+            }
+            const started = performance.now();
+            const tick = (now) => {
+                const progress = Math.min(1, (now - started) / 700);
+                awardsValue.textContent = String(Math.round(target * progress));
+                if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    paint();
+                    observer.disconnect();
+                }
+            }, { threshold: 0.5 });
+            observer.observe(awardsValue);
+        } else {
+            paint();
+        }
+    }
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const lightbox = document.getElementById('portfolioLightbox');
+    if (lightbox && lightbox.getAttribute('data-open') === 'true') return;
+    const gallery = document.getElementById('gallery');
+    const track = document.getElementById('galleryTrack');
+    if (!gallery || !track) return;
+    const active = document.activeElement;
+    const tag = active && active.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    const rect = gallery.getBoundingClientRect();
+    const focusInside = gallery.contains(active);
+    const onScreen = rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.3;
+    if (!focusInside && !onScreen) return;
+    e.preventDefault();
+    changeSlide('galleryTrack', e.key === 'ArrowRight' ? 1 : -1);
 });
 
 // Кнопка «Наверх»

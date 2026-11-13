@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Воспитатель Волкова Анна Викторовна</title>
-    <meta name="description" content="Портфолио воспитателя Волковой Анны Викторовны: МБДОУ «Детский сад» № 10, г. Солнечногорск. Занятия, проекты, грамоты и фотографии.">
+    <meta name="description" content="Портфолио воспитателя Волковой Анны Викторовны: занятия, проекты, грамоты, сертификаты и фотографии. Солнечногорск.">
     <meta name="keywords" content="воспитатель, детский сад, Волкова Анна Викторовна, МБДОУ № 10, Солнечногорск">
     <meta name="author" content="Волкова Анна Викторовна">
     <meta name="theme-color" content="#f4fbfa">
@@ -71,16 +71,13 @@
             <nav class="site-header__nav" aria-label="Основная навигация">
                 <a href="#main-content" class="site-header__logo">Волкова Анна</a>
                 <ul class="site-header__list" id="primary-nav">
-                    <li><a href="#about">О педагоге</a></li>
-                    <li><a href="#services">Направления</a></li>
-                    <li class="site-header__dropdown">
-                        <a href="#gallery" aria-haspopup="true" aria-expanded="false" aria-controls="menu-projects">Материалы <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-                        <ul class="site-header__submenu" id="menu-projects" role="menu">
-                            <li role="none"><a href="#gallery" role="menuitem">Фотографии</a></li>
-                            <li role="none"><a href="#awards" role="menuitem">Грамоты и дипломы</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#faq">Вопросы</a></li>
+                    <li><a href="#intro">Введение</a></li>
+                    <li><a href="#stats">Статистика</a></li>
+                    <li><a href="#about">О воспитателе</a></li>
+                    <li><a href="#awards">Грамоты и награды</a></li>
+                    <li><a href="#materials" class="site-header__link--long">Педагогические разработки / опыт работы</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li class="site-header__item--cta-mobile"><a href="#contact" class="site-header__cta">Контакты</a></li>
                 </ul>
                 <div class="theme-switcher" role="group" aria-label="Тема сайта">
@@ -100,7 +97,7 @@
     </header>
 
     <main id="main-content" tabindex="-1">
-    <section class="hero">
+    <section class="hero" id="intro">
         <div class="lego-scene lego-scene--hero" aria-hidden="true">
             <svg class="lego-scene__piece lego-scene__piece--brick-red" viewBox="0 0 64 48" focusable="false"><rect x="4" y="16" width="56" height="28" rx="3" fill="#E3000B"/><rect x="8" y="8" width="12" height="12" rx="2" fill="#FF4D4D"/><rect x="26" y="8" width="12" height="12" rx="2" fill="#FF4D4D"/><rect x="44" y="8" width="12" height="12" rx="2" fill="#FF4D4D"/></svg>
             <svg class="lego-scene__piece lego-scene__piece--brick-yellow" viewBox="0 0 48 40" focusable="false"><rect x="4" y="14" width="40" height="22" rx="3" fill="#FFD500"/><rect x="10" y="6" width="10" height="10" rx="2" fill="#FFE566"/><rect x="28" y="6" width="10" height="10" rx="2" fill="#FFE566"/></svg>
@@ -112,41 +109,40 @@
                     <h1 class="hero__title">
                         <span class="hero__line">Волкова</span>
                         <span class="hero__line">Анна Викторовна</span>
-                        <span class="hero__line">воспитатель детского сада</span>
+                        <span class="hero__line">Воспитатель</span>
                     </h1>
-                    <p class="hero__description">Воспитатель МБДОУ «Детский сад» № 10 комбинированного вида в Солнечногорске. В практике — здоровье, конструирование, окружающий мир, творчество и проекты вместе с детьми и родителями.</p>
+                    <p class="hero__description">Воспитатель из Солнечногорска. В портфолио — занятия, проекты, награды и фотографии: здоровье, конструирование, LEGO и робототехника, окружающий мир и работа с родителями.</p>
                     <div class="hero__actions">
-                        <a href="#awards" class="btn btn--primary">Грамоты и дипломы</a>
-                        <a href="#gallery" class="btn btn--secondary">Фотографии</a>
+                        <a href="#awards" class="btn btn--primary">Грамоты и награды</a>
+                        <a href="#materials" class="btn btn--secondary">Педагогические разработки</a>
                     </div>
                 </div>
                 <div class="hero__media">
                     <div class="hero__figure">
-                        <img src="images/gallery/01.jpg" alt="Волкова Анна Викторовна с детьми на участке детского сада" class="hero__photo" width="600" height="400" fetchpriority="high">
+                        <img src="images/webp/hero/avatar.webp" alt="Волкова Анна Викторовна" class="hero__photo" width="1401" height="1920" fetchpriority="high">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats">
+    <section class="stats" id="stats">
         <div class="layout__container">
             <div class="stats__grid">
                 <div class="stats__item">
-                    <div class="stats__value">№ 10</div>
-                    <div class="stats__label"><span class="stats__label-accent">Детский сад</span> Солнечногорск</div>
+                    <div class="stats__icon" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="stats__value" id="statExperience">—</div>
+                    <div class="stats__label"><span class="stats__label-accent">Стаж работы</span> уточняется</div>
                 </div>
                 <div class="stats__item">
-                    <div class="stats__value">I</div>
-                    <div class="stats__label"><span class="stats__label-accent">Категория</span> в проекте 2017 г.</div>
+                    <div class="stats__icon" aria-hidden="true"><i class="fas fa-award"></i></div>
+                    <div class="stats__value" id="statAwards" data-count-awards>33</div>
+                    <div class="stats__label"><span class="stats__label-accent">Награды</span> документы в портфолио</div>
                 </div>
                 <div class="stats__item">
-                    <div class="stats__value">2 и 8</div>
-                    <div class="stats__label"><span class="stats__label-accent">Группы</span> в материалах</div>
-                </div>
-                <div class="stats__item">
-                    <div class="stats__value">2015</div>
-                    <div class="stats__label"><span class="stats__label-accent">Грамота</span> министерства</div>
+                    <div class="stats__icon" aria-hidden="true"><i class="fas fa-children"></i></div>
+                    <div class="stats__value" id="statGraduates">—</div>
+                    <div class="stats__label"><span class="stats__label-accent">Выпускники</span> уточняется</div>
                 </div>
             </div>
         </div>
@@ -162,224 +158,401 @@
         <div class="layout__container">
             <h2 class="section__title">О воспитателе</h2>
             <div class="about__profile">
-                <img src="images/gallery/06.jpg" alt="Волкова Анна Викторовна на празднике в детском саду" class="about__photo" width="600" height="400" loading="lazy" decoding="async">
+                <img src="images/webp/gallery/g06.webp" alt="Волкова Анна Викторовна на празднике в детском саду" class="about__photo" width="600" height="400" loading="lazy" decoding="async">
                 <div class="about__bio">
                     <h3 class="about__name">Волкова Анна Викторовна</h3>
-                    <p>Воспитатель МБДОУ «Детский сад» № 10 комбинированного вида Солнечногорского муниципального района Московской области.</p>
-                    <p>В материалах — занятия с детьми подготовительной к школе группы и работа в группах № 2 и № 8. Среди направлений: здоровьесбережение, конструирование, экспериментальная деятельность, патриотическое воспитание и создание мультфильмов вместе с детьми и родителями.</p>
-                    <p>В 2015 году награждена Почётной грамотой Министерства образования Московской области. В авторском проекте 2017 года указана как воспитатель I категории.</p>
+                    <p>Воспитатель. В документах разных лет указаны МБДОУ «Детский сад» № 10 и МБДОУ «Детский сад комбинированного вида № 36» в Солнечногорске. Сертификат проекта «Орлята-дошколята» за 2023–2024 учебный год выдан воспитателю МБОУ СОШ № 5 с УИОП.</p>
+                    <p>В материалах — занятия подготовительной к школе группы, группы № 2 и № 8, здоровьесбережение, конструирование, LEGO и робототехника, эксперименты, патриотическое воспитание и мультфильмы вместе с детьми и родителями.</p>
+                    <p>В 2015 году награждена Почётной грамотой Министерства образования Московской области. В проекте 2017 года указана как воспитатель I категории МБДОУ № 10. В презентациях о LEGO и робототехнике — воспитатель высшей категории МБДОУ № 36.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <div class="services__inner">
-            <div class="services__header">
-                <h2 class="services__title">Направления работы</h2>
-                <p class="services__lead">Темы собраны из конспектов, презентаций и проектов. Нажмите на направление, чтобы прочитать, что именно есть в материалах.</p>
+        <section id="awards" class="awards">
+        <div class="layout__container">
+            <h2 class="section__title">Грамоты и награды</h2>
+            <p class="section__lead">Документы идут от более ранних к более поздним. Если на бланке есть только год, он стоит после документов этого года с точной датой. Нажмите на карточку, чтобы открыть документ крупно.</p>
+            <div class="awards__filters" role="toolbar" aria-label="Фильтр документов">
+                <button type="button" class="awards__filter is-active" data-filter="all" aria-pressed="true">Все документы</button>
+                <button type="button" class="awards__filter" data-filter="diploma" aria-pressed="false">Дипломы</button>
+                <button type="button" class="awards__filter" data-filter="gramota" aria-pressed="false">Грамоты</button>
+                <button type="button" class="awards__filter" data-filter="certificate" aria-pressed="false">Сертификаты</button>
+                <button type="button" class="awards__filter" data-filter="thanks" aria-pressed="false">Благодарственные письма</button>
             </div>
-            <div class="services__subjects-wrap">
-                <div class="services__subjects">
-                    <button type="button" class="services__subject" data-subject="Здоровье" data-text="В опыте групп № 2 и № 8: физкультурные занятия, подвижные игры, утренняя гимнастика и гимнастика пробуждения, пальчиковая и дыхательная гимнастика, гимнастика для глаз, недели здоровья и совместная утренняя гимнастика с родителями.">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                        <span>Здоровье</span>
+            <div class="awards__grid" id="awardsGrid" data-lightbox>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/23.webp" data-title="Почётная грамота, 2011" data-desc="Комитет по народному образованию администрации Солнечногорского муниципального района. За добросовестный труд, к Дню учителя. В подписи указан 2011 год.">
+                    <img src="images/webp/awards/23.webp" alt="Почётная грамота комитета по народному образованию, 2011 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">Почётная грамота района, 2011</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/17.webp" data-title="Призёр муниципального конкурса, 2012" data-desc="Конкурс «На лучшую организацию и содержание речевой предметно-развивающей и игровой среды в ДОУ», номинация «Младший возраст».">
+                    <img src="images/webp/awards/17.webp" alt="Грамота призёра конкурса развивающей среды, 2012 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">Развивающая среда, 2012</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/18.webp" data-title="«Бумажная филигрань», 2013" data-desc="Финалист всероссийского конкурса «Живинка», номинация «Дизайн». Портал «Музыкальный сад», 11.11.2013.">
+                    <img src="images/webp/awards/18.webp" alt="Диплом финалиста конкурса «Живинка» за работу «Бумажная филигрань», 11.11.2013" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Бумажная филигрань», 11.11.2013</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="certificate" data-full="images/webp/awards/19.webp" data-title="Группа «Росинка», 2013" data-desc="Сертификат участника конкурса «Добро пожаловать!» интернет-журнала «Планета Детства». Публикация 12.11.2013.">
+                    <img src="images/webp/awards/19.webp" alt="Сертификат участника конкурса «Добро пожаловать!» за материал о группе «Росинка», 12.11.2013" loading="lazy" decoding="async">
+                    <span class="awards__caption">Группа «Росинка», 12.11.2013</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/20.webp" data-title="«Мини-музей» и «Зелёный уголок», 2014" data-desc="Благодарность заведующего МБДОУ № 10 за 1-е место в конкурсах. 20 июня 2014 г.">
+                    <img src="images/webp/awards/20.webp" alt="Благодарность за 1-е место в конкурсах «Мини-музей» и «Зелёный уголок», 20.06.2014" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Мини-музей», 20.06.2014</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/21.webp" data-title="«Искорки Солнечногорья», 2015" data-desc="Благодарность заведующего МБДОУ № 10 за подготовку и проведение муниципального творческого конкурса. 3 февраля 2015 г.">
+                    <img src="images/webp/awards/21.webp" alt="Благодарность за конкурс «Искорки Солнечногорья», 03.02.2015" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Искорки Солнечногорья», 03.02.2015</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/13.webp" data-title="Почётная грамота Министерства образования Московской области" data-desc="За добросовестный труд и успешную работу по обучению и воспитанию детей. Приказ от 07.04.2015, к Дню учителя.">
+                    <img src="images/webp/awards/13.webp" alt="Почётная грамота Министерства образования Московской области, 07.04.2015" loading="lazy" decoding="async">
+                    <span class="awards__caption">Грамота министерства, 07.04.2015</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/22.webp" data-title="Грамота главы Солнечногорского района, 2015" data-desc="За успехи в организации воспитательного процесса и личный вклад в подготовку воспитанников. Ко Дню дошкольного работника. На документе указан 2015 год.">
+                    <img src="images/webp/awards/22.webp" alt="Грамота главы Солнечногорского муниципального района, 2015 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">Грамота главы района, 2015</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/vospitatel-goda.webp" data-title="Диплом «Воспитатель года Солнечногорья»" data-desc="Призёр муниципального конкурса «Педагог года» в номинации «Воспитатель года Солнечногорья — 2016», грант Комитета по народному образованию. На документе указан 2015 год.">
+                    <img src="images/webp/awards/vospitatel-goda.webp" alt="Диплом призёра конкурса «Воспитатель года Солнечногорья», 2015 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Воспитатель года», 2015</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/08.webp" data-title="«Доутесса», I место, 2016" data-desc="I место, блиц-олимпиада «Как достичь взаимопонимания с ребёнком?». Дата участия 20.10.2016.">
+                    <img src="images/webp/awards/08.webp" alt="Диплом I места конкурса «Доутесса», 20.10.2016" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Доутесса», I место, 20.10.2016</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/doutessa-fgos.webp" data-title="«Доутесса», II место, 2016" data-desc="Блиц-олимпиада «Федеральный государственный образовательный стандарт дошкольного образования». Дата участия 20.10.2016. Номер диплома DTS-37779. Это другой диплом, не дубликат I места.">
+                    <img src="images/webp/awards/doutessa-fgos.webp" alt="Диплом II места конкурса «Доутесса» по ФГОС дошкольного образования, 20.10.2016" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Доутесса», II место, 20.10.2016</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/12.webp" data-title="Грамота участника «Наше Подмосковье», 2016" data-desc="Ежегодная премия Губернатора Московской области «Наше Подмосковье», Солнечногорский район. Указан 2016 год.">
+                    <img src="images/webp/awards/12.webp" alt="Грамота участника премии «Наше Подмосковье», 2016 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Наше Подмосковье», 2016</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/16.webp" data-title="«Зимняя сказка», 2016" data-desc="Победитель конкурса зимних построек в номинации «Самая оригинальная», группа № 8. Указан 2016 год.">
+                    <img src="images/webp/awards/16.webp" alt="Грамота победителя конкурса зимних построек «Зимняя сказка 2016», группа № 8" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Зимняя сказка», группа № 8, 2016</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/15.webp" data-title="«Изумрудный город», 2 место" data-desc="2 место во всероссийском конкурсе. Номинация «Лучшая презентация», работа «Экспериментальная деятельность в ДОУ». Работа от 06.01.2017.">
+                    <img src="images/webp/awards/15.webp" alt="Диплом 2 места конкурса «Изумрудный город» за презентацию об экспериментальной деятельности" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Изумрудный город», 06.01.2017</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/01.webp" data-title="«Цветочная клумба „Морской причал“», 2017" data-desc="1 место всероссийского конкурса «Солнечный свет». Номинация «Оформление помещений, территории, участка». 21 августа 2017 г.">
+                    <img src="images/webp/awards/01.webp" alt="Диплом 1 места за работу «Цветочная клумба Морской причал», 21.08.2017" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Морской причал», 21.08.2017</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/02.webp" data-title="«Солнечный город», 2017" data-desc="1 место всероссийского конкурса «Солнечный свет». Номинация «Моё итоговое мероприятие». 21 августа 2017 г.">
+                    <img src="images/webp/awards/02.webp" alt="Диплом 1 места за итоговое мероприятие «Солнечный город», 21.08.2017" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Солнечный город», 21.08.2017</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/04.webp" data-title="«Солнышко лучистое!», 2017" data-desc="1 место международного конкурса «Солнечный свет». Номинация «Пусть всегда будет солнце!». 21 августа 2017 г.">
+                    <img src="images/webp/awards/04.webp" alt="Диплом 1 места за работу «Солнышко лучистое!», 21.08.2017" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Солнышко лучистое!», 21.08.2017</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/10.webp" data-title="Благодарственное письмо, 2017" data-desc="Управление образования. За активную творческую деятельность в конкурсе «Детский проект — 2017».">
+                    <img src="images/webp/awards/10.webp" alt="Благодарственное письмо управления образования за конкурс «Детский проект — 2017»" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Детский проект», 2017</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/24.webp" data-title="Диплом участника «Наше Подмосковье», 2018" data-desc="Проект «Мир вокруг нас», категория «Инициатива», Солнечногорский район. Указан 2018 год.">
+                    <img src="images/webp/awards/24.webp" alt="Диплом участника премии «Наше Подмосковье» за проект «Мир вокруг нас», 2018 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Мир вокруг нас», 2018</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/11.webp" data-title="Благодарственное письмо, 2018" data-desc="За активное участие и профессиональную компетентность в конкурсе «Детский проект — 2018».">
+                    <img src="images/webp/awards/11.webp" alt="Благодарственное письмо за конкурс «Детский проект — 2018»" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Детский проект», 2018</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/03.webp" data-title="«Гжель», 2019" data-desc="1 место международного конкурса «Декоративно-прикладное творчество» портала «Солнечный свет». 11 марта 2019 г.">
+                    <img src="images/webp/awards/03.webp" alt="Диплом 1 места за работу «Гжель», 11.03.2019" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Гжель», 11.03.2019</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/06.webp" data-title="«Зимняя сказка», 2019" data-desc="1 место международного конкурса «Оформление помещений, территории, участка». 11 марта 2019 г.">
+                    <img src="images/webp/awards/06.webp" alt="Диплом 1 места за оформление «Зимняя сказка», 11.03.2019" loading="lazy" decoding="async">
+                    <span class="awards__caption">Оформление «Зимняя сказка», 11.03.2019</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/05.webp" data-title="«Мой папа самый лучший», 2019" data-desc="1 место международного конкурса «День защитника Отечества». 11 марта 2019 г.">
+                    <img src="images/webp/awards/05.webp" alt="Диплом 1 места за работу «Мой папа самый лучший», 11.03.2019" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Мой папа самый лучший», 11.03.2019</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/07.webp" data-title="Мультфильм «Цветы для мамы», 2019" data-desc="1 место всероссийского конкурса на портале «Воспитателю.ру», номинация «Фильмы, мультфильмы». Заявка от 11.03.2019.">
+                    <img src="images/webp/awards/07.webp" alt="Диплом 1 места за мультфильм «Цветы для мамы», 11.03.2019" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Цветы для мамы», 11.03.2019</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/14.webp" data-title="Фестиваль «Мы конструируем будущее», 2019" data-desc="Благодарность за подготовку и проведение муниципального фестиваля технического творчества для детей старшего дошкольного возраста. Указан 2019 год.">
+                    <img src="images/webp/awards/14.webp" alt="Благодарственное письмо за фестиваль «Мы конструируем будущее», 2019 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Мы конструируем будущее», 2019</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="certificate" data-full="images/webp/awards/cert-did.webp" data-title="Сертификат: дидактическая игра в PowerPoint" data-desc="24.03.2022 воспитатель МБДОУ № 36 провела мастерскую «Создание дидактической игры в программе PowerPoint». Регистрационный номер 3809, дата на документе — 28 марта 2022 г.">
+                    <img src="images/webp/awards/cert-did.webp" alt="Сертификат о мастерской «Создание дидактической игры в программе PowerPoint», 28.03.2022" loading="lazy" decoding="async">
+                    <span class="awards__caption">Дидактическая игра, 28.03.2022</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/thanks-future-1.webp" data-title="Благодарность «Учитель будущего», 2022" data-desc="Спикеру вебинара «Создание и использование игр и квестов в программе PowerPoint для познавательного развития детей дошкольников». Воспитатель МБДОУ № 36. Орехово-Зуево, 26 апреля 2022 года.">
+                    <img src="images/webp/awards/thanks-future-1.webp" alt="Благодарность центра «Учитель будущего» от 26.04.2022" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Учитель будущего», 26.04.2022</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="certificate" data-full="images/webp/awards/cert-interactive.webp" data-title="Сертификат: игры и квесты в PowerPoint" data-desc="26.04.2022 воспитатель МБДОУ № 36 провела семинар на муниципальной стажировочной площадке. Регистрационный номер 4060, дата на документе — 7 августа 2022 г.">
+                    <img src="images/webp/awards/cert-interactive.webp" alt="Сертификат семинара «Как создавать игры и квесты в программе PowerPoint», 07.08.2022" loading="lazy" decoding="async">
+                    <span class="awards__caption">Игры и квесты, 07.08.2022</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="thanks" data-full="images/webp/awards/thanks-future-2.webp" data-title="Благодарность за семинар о STEAM, 2023" data-desc="За выступление «Планирование содержания образовательных платформ и образовательного процесса ДОУ в процессе реализации STEAM-образования» и трансляцию опыта. Воспитатель МБДОУ № 36. 30 марта 2023 г., г. Истра.">
+                    <img src="images/webp/awards/thanks-future-2.webp" alt="Благодарность за выступление на региональном семинаре, 30.03.2023" loading="lazy" decoding="async">
+                    <span class="awards__caption">Семинар STEAM, 30.03.2023</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="credential" data-full="images/webp/awards/udost-fop.webp" data-title="Удостоверение о повышении квалификации" data-desc="Программа «ФОП дошкольного образования: внедрение в образовательный процесс ДОО», 72 часа, с 10 по 31 июля 2023 года. Дата выдачи 31 июля 2023 года, регистрационный номер 7800. Повтор файла в материалах не учитывается.">
+                    <img src="images/webp/awards/udost-fop.webp" alt="Удостоверение о повышении квалификации по программе ФОП дошкольного образования, 31.07.2023" loading="lazy" decoding="async">
+                    <span class="awards__caption">Удостоверение, ФОП, 31.07.2023</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="certificate" data-full="images/webp/awards/cert-lego.webp" data-title="Сертификат: LEGO и робототехника" data-desc="30.03.2023 воспитатель МБДОУ № 36 провела семинар о STEM-образовании, LEGO-конструировании и робототехнике. Регистрационный номер 4041, дата на документе — 7 августа 2023 г.">
+                    <img src="images/webp/awards/cert-lego.webp" alt="Сертификат семинара о LEGO-конструировании и робототехнике, 07.08.2023" loading="lazy" decoding="async">
+                    <span class="awards__caption">LEGO и робототехника, 07.08.2023</span>
+                </button>
+                <button type="button" class="awards__card" data-award data-type="certificate" data-full="images/webp/awards/cert-orlyata.webp" data-title="Сертификат «Орлята-дошколята»" data-desc="Региональный ресурсный центр «Навигаторы детства» Московской области. Воспитатель МБОУ СОШ № 5 с УИОП реализует пилотный проект «Орлята-дошколята» в 2023–2024 учебном году. На бланке указан 2024 год.">
+                    <img src="images/webp/awards/cert-orlyata.webp" alt="Сертификат проекта «Орлята-дошколята» за 2023–2024 учебный год" loading="lazy" decoding="async">
+                    <span class="awards__caption">«Орлята-дошколята», 2023–2024</span>
+                </button>
+                <h3 class="awards__group">Дата не указана</h3>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/09.webp" data-title="Грамота ко Дню дошкольного работника" data-desc="Комитет по народному образованию. За добросовестный труд и успешную работу воспитателя МБДОУ № 10. Год на этой копии не читается однозначно, поэтому документ стоит в группе «Дата не указана».">
+                    <img src="images/webp/awards/09.webp" alt="Грамота за добросовестный труд ко Дню дошкольного работника. Дата на публикуемой подписи не установлена" loading="lazy" decoding="async">
+                    <span class="awards__caption">Дата не указана</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="materials" class="materials">
+        <div class="lego-scene lego-scene--about" aria-hidden="true">
+            <svg class="lego-scene__piece lego-scene__piece--a" viewBox="0 0 64 48" focusable="false"><rect x="4" y="16" width="56" height="28" rx="3" fill="#FFD500"/><rect x="8" y="8" width="12" height="12" rx="2" fill="#FFE566"/><rect x="26" y="8" width="12" height="12" rx="2" fill="#FFE566"/><rect x="44" y="8" width="12" height="12" rx="2" fill="#FFE566"/></svg>
+            <svg class="lego-scene__piece lego-scene__piece--c" viewBox="0 0 48 40" focusable="false"><rect x="4" y="14" width="40" height="22" rx="3" fill="#00AF4D"/><rect x="10" y="6" width="10" height="10" rx="2" fill="#5CDB7A"/><rect x="28" y="6" width="10" height="10" rx="2" fill="#5CDB7A"/></svg>
+        </div>
+        <div class="layout__container">
+            <h2 class="section__title">Педагогические разработки / опыт работы</h2>
+            <p class="section__lead">Конспекты, проекты, выступления и материалы для родителей. Откройте направление, выберите Word или PowerPoint и читайте документ на отдельной странице. Оригинал можно скачать.</p>
+            <div class="materials__list">
+                <article class="materials__cat">
+                    <button type="button" class="materials__toggle" aria-expanded="false" aria-controls="materials-lessons">
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                        <span class="materials__toggle-text">
+                            <strong>Конспекты занятий</strong>
+                            <small>Сценарии занятий и дидактическая игра для группы</small>
+                        </span>
+                        <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="services__subject" data-subject="Конструирование" data-text="Конспекты для подготовительной к школе группы, дети 6–7 лет: «Парк развлечений» и «Солнечный город». Занятия групповые, с элементами конструирования и экологического воспитания, по ФГОС.">
-                        <i class="fas fa-cubes" aria-hidden="true"></i>
-                        <span>Конструирование</span>
+                    <div class="materials__panel" id="materials-lessons" hidden>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=park">Конспект занятия «Парк развлечений»</a></li>
+                                <li><a href="documents/view.html?id=solnechny">Конспект занятия «Солнечный город»</a></li>
+                                <li><a href="documents/view.html?id=progulka">Прогулка в весенний лес</a></li>
+                            </ul>
+                        </div>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=ten">Дидактическая игра «Найди тень»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="materials__cat">
+                    <button type="button" class="materials__toggle" aria-expanded="false" aria-controls="materials-projects">
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                        <span class="materials__toggle-text">
+                            <strong>Проекты</strong>
+                            <small>Долгие проекты с детьми и родителями</small>
+                        </span>
+                        <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="services__subject" data-subject="Окружающий мир" data-text="Дидактическая игра «Найди тень», занятие «Прогулка в весенний лес», презентация об интерактивном оборудовании на занятиях по экспериментальной деятельности и материал «Играем вместе с детьми. Кукольный салон моды».">
-                        <i class="fas fa-seedling" aria-hidden="true"></i>
-                        <span>Окружающий мир</span>
+                    <div class="materials__panel" id="materials-projects" hidden>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=nikto">Проект «Никто не забыт, ничто не забыто»</a></li>
+                                <li><a href="documents/view.html?id=multfilm">Проект «Создание мультфильма»</a></li>
+                            </ul>
+                        </div>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=kukly">Проект «Кукольный салон моды»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="materials__cat">
+                    <button type="button" class="materials__toggle" aria-expanded="false" aria-controls="materials-talks">
+                        <i class="fas fa-microphone" aria-hidden="true"></i>
+                        <span class="materials__toggle-text">
+                            <strong>Публичные выступления</strong>
+                            <small>Презентации из опыта работы и семинаров</small>
+                        </span>
+                        <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="services__subject" data-subject="Мультфильмы" data-text="Проект 2017 года «Создание мультфильма как способ развития познавательных и творческих способностей детей дошкольного возраста». Дети вместе с воспитателем и родителями придумывают героев, делают декорации и озвучивают мультфильмы.">
-                        <i class="fas fa-film" aria-hidden="true"></i>
-                        <span>Мультфильмы</span>
-                    </button>
-                    <button type="button" class="services__subject" data-subject="Патриотическое воспитание" data-text="Проект «Никто не забыт, ничто не забыто»: совместная работа воспитателей, детей и родителей и выставка детского творчества ко Дню Победы.">
-                        <i class="fas fa-ribbon" aria-hidden="true"></i>
-                        <span>Память</span>
-                    </button>
-                    <button type="button" class="services__subject" data-subject="Работа с семьёй" data-text="Родительское собрание «Скоро в школу», информационные уголки, фотовыставка «Моя спортивная семья» и другие совместные формы, описанные в материалах недель здоровья и проектов.">
+                    <div class="materials__panel" id="materials-talks" hidden>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=zdorovie">Использование здоровьеформирующих технологий</a></li>
+                                <li><a href="documents/view.html?id=experiment">Интерактивное оборудование на занятиях по экспериментальной деятельности</a></li>
+                                <li><a href="documents/view.html?id=lego-stem">Выступление: LEGO-конструирование и робототехника</a></li>
+                                <li><a href="documents/view.html?id=robot">Робототехника в детском саду</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="materials__cat">
+                    <button type="button" class="materials__toggle" aria-expanded="false" aria-controls="materials-parents">
                         <i class="fas fa-people-roof" aria-hidden="true"></i>
-                        <span>Семья</span>
+                        <span class="materials__toggle-text">
+                            <strong>Работа с родителями</strong>
+                            <small>Встречи и собрания с семьями воспитанников</small>
+                        </span>
+                        <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                </div>
-                <p class="services__subjects-hint">Нажмите на направление, чтобы прочитать подробнее</p>
-            </div>
-            <div class="services__detail" id="subjectDetail" role="region" aria-live="polite" aria-labelledby="subjectDetailHeading" aria-hidden="true" style="display: none;">
-                <h3 id="subjectDetailHeading" class="services__detail-title"></h3>
-                <p class="services__detail-text"></p>
-                <button type="button" class="services__detail-close">Закрыть</button>
-            </div>
-            <div class="services__grid">
-                <div class="services__card services__card--dark">
-                    <div class="services__card-icon"><i class="fas fa-child" aria-hidden="true"></i></div>
-                    <h3>Занятия в группе</h3>
-                    <p>Итоговые занятия, игры, эксперименты и двигательная активность для детей дошкольного возраста, в том числе подготовительной к школе группы.</p>
-                    <a href="#gallery" class="services__card-link">Смотреть фотографии <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
-                <div class="services__card services__card--accent">
-                    <div class="services__card-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
-                    <h3>Проекты</h3>
-                    <p>Долгие проекты с детьми и родителями: мультфильм, патриотическая тема «Никто не забыт, ничто не забыто», подготовка к школе.</p>
-                    <a href="#services" class="services__card-link">К направлениям <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
-                <div class="services__card services__card--accent">
-                    <div class="services__card-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
-                    <h3>Конкурсы</h3>
-                    <p>Дипломы всероссийских и муниципальных конкурсов: оформление среды, итоговое мероприятие, презентации, мультфильм и технические фестивали.</p>
-                    <a href="#awards" class="services__card-link">Открыть грамоты <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
-                <div class="services__card services__card--dark">
-                    <div class="services__card-icon"><i class="fas fa-hands-holding-child" aria-hidden="true"></i></div>
-                    <h3>Вместе с семьёй</h3>
-                    <p>Родители участвуют в проектах, выставках и оздоровительных формах. Отдельное собрание посвящено теме «Скоро в школу».</p>
-                    <a href="#contact" class="services__card-link">Контакты сада <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
+                    <div class="materials__panel" id="materials-parents" hidden>
+                        <div class="materials__format">
+                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                            <ul>
+                                <li><a href="documents/view.html?id=roditeli">Родительское собрание «Скоро в школу»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <section id="gallery" class="gallery">
         <div class="layout__container">
-            <h2 class="section__title">Фотографии</h2>
-            <p class="section__lead">Снимки из практики в детском саду. Нажмите на фотографию, чтобы открыть её крупнее.</p>
-            <div class="gallery__grid" data-lightbox>
-                <button type="button" class="gallery__card" data-full="images/gallery/01.jpg" data-title="На участке" data-desc="Прогулка с детьми на территории детского сада.">
-                    <img src="images/gallery/01.jpg" alt="Воспитатель с детьми на участке детского сада" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/02.jpg" data-title="Пожарная часть" data-desc="Группа на экскурсии в пожарной части.">
-                    <img src="images/gallery/02.jpg" alt="Группа детского сада на экскурсии в пожарной части" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/03.jpg" data-title="Праздник в группе" data-desc="Общая фотография праздника в музыкальном зале.">
-                    <img src="images/gallery/03.jpg" alt="Праздник в группе детского сада" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/04.jpg" data-title="Игра в группе" data-desc="Настольная игра с детьми за столом.">
-                    <img src="images/gallery/04.jpg" alt="Воспитатель играет с детьми за столом в группе" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/05.jpg" data-title="Правила дороги" data-desc="Занятие со знаками дорожного движения.">
-                    <img src="images/gallery/05.jpg" alt="Дети со знаками дорожного движения на занятии" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/06.jpg" data-title="Праздничный день" data-desc="Воспитатель с ребёнком на фоне бумажных деревьев.">
-                    <img src="images/gallery/06.jpg" alt="Волкова Анна Викторовна с ребёнком на празднике" width="600" height="400" loading="lazy" decoding="async">
-                </button>
-                <button type="button" class="gallery__card" data-full="images/gallery/07.jpg" data-title="Утренник" data-desc="Группа на утреннике в музыкальном зале.">
-                    <img src="images/gallery/07.jpg" alt="Утренник в детском саду: дети и педагоги" width="600" height="400" loading="lazy" decoding="async">
-                </button>
+            <h2 class="section__title">Галерея</h2>
+            <p class="section__lead">Фотографии из практики. Листайте стрелками, точками или свайпом. Нажмите на снимок, чтобы открыть его на весь экран.</p>
+            <div class="gallery-slider">
+                <div class="slider__container">
+                    <button type="button" class="slider__arrow prev" data-slider="galleryTrack" data-direction="-1" aria-label="Предыдущая фотография">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <div class="slider__track" id="galleryTrack" tabindex="0" aria-label="Слайдер фотографий">
+                    <div class="slider__slide" data-title="На участке" data-desc="Прогулка с детьми на территории детского сада.">
+                        <img src="images/webp/gallery/g01.webp" alt="Воспитатель с детьми на участке детского сада" loading="eager" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Пожарная часть" data-desc="Группа на экскурсии в пожарной части.">
+                        <img src="images/webp/gallery/g02.webp" alt="Группа детского сада на экскурсии в пожарной части" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Праздник в группе" data-desc="Общая фотография праздника в музыкальном зале.">
+                        <img src="images/webp/gallery/g03.webp" alt="Праздник в группе детского сада" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Игра в группе" data-desc="Настольная игра с детьми за столом.">
+                        <img src="images/webp/gallery/g04.webp" alt="Воспитатель играет с детьми за столом в группе" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Правила дороги" data-desc="Занятие со знаками дорожного движения.">
+                        <img src="images/webp/gallery/g05.webp" alt="Дети со знаками дорожного движения на занятии" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Праздничный день" data-desc="Воспитатель с ребёнком на фоне бумажных деревьев.">
+                        <img src="images/webp/gallery/g06.webp" alt="Волкова Анна Викторовна с ребёнком на празднике" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Утренник" data-desc="Группа на утреннике в музыкальном зале.">
+                        <img src="images/webp/gallery/g07.webp" alt="Утренник в детском саду: дети и педагоги" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 1" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n01.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 2" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n02.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 3" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n03.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 4" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n04.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 5" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n05.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 6" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n06.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 7" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n07.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 8" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n08.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 9" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n09.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 10" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n10.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 11" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n11.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 12" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n12.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 13" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n13.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 14" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n14.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 15" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n15.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 16" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n16.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 17" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n17.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 18" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n18.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 19" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n19.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 20" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n20.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 21" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n21.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 22" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n22.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 23" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n23.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 24" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n24.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 25" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n25.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 26" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n26.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 27" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n27.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Практика, фото 28" data-desc="Снимок из новых материалов педагога.">
+                        <img src="images/webp/gallery/n28.webp" alt="Фотография из практики в детском саду" loading="lazy" decoding="async">
+                    </div>
+                    <div class="slider__slide" data-title="Праздник «Воспитатель года»" data-desc="Педагоги на сцене праздника.">
+                        <img src="images/webp/gallery/event.webp" alt="Волкова Анна Викторовна на празднике «Воспитатель года»" loading="lazy" decoding="async">
+                    </div>
+                    </div>
+                    <button type="button" class="slider__arrow next" data-slider="galleryTrack" data-direction="1" aria-label="Следующая фотография">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="slider__controls" id="galleryDots" aria-label="Переход к фотографии"></div>
+                <p class="gallery-slider__status" id="galleryStatus" aria-live="polite">1 из 36</p>
             </div>
         </div>
     </section>
 
-    <section id="awards" class="awards">
+<section id="faq" class="faq">
         <div class="layout__container">
-            <h2 class="section__title">Грамоты и дипломы</h2>
-            <p class="section__lead">Документы видны на странице. Нажмите на карточку, чтобы прочитать грамоту в увеличенном виде.</p>
-            <div class="awards__grid" data-lightbox>
-                <button type="button" class="awards__card" data-full="images/awards/13.jpg" data-title="Почётная грамота Министерства образования Московской области" data-desc="За добросовестный труд и успешную работу по обучению и воспитанию детей. Приказ от 07.04.2015, к Дню учителя.">
-                    <img src="images/awards/13.jpg" alt="Почётная грамота Министерства образования Московской области, 2015 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Почётная грамота министерства, 2015</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/23.jpg" data-title="Почётная грамота, 2011" data-desc="Комитет по народному образованию администрации Солнечногорского муниципального района. За добросовестный труд, к Дню учителя.">
-                    <img src="images/awards/23.jpg" alt="Почётная грамота комитета по народному образованию, 2011 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Почётная грамота района, 2011</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/22.jpg" data-title="Грамота главы Солнечногорского района, 2015" data-desc="За успехи в организации воспитательного процесса и личный вклад в подготовку воспитанников. Ко Дню дошкольного работника.">
-                    <img src="images/awards/22.jpg" alt="Грамота главы Солнечногорского муниципального района, 2015 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Грамота главы района, 2015</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/09.jpg" data-title="Грамота ко Дню дошкольного работника" data-desc="Комитет по народному образованию. За добросовестный труд и успешную работу воспитателя МБДОУ № 10.">
-                    <img src="images/awards/09.jpg" alt="Грамота за добросовестный труд ко Дню дошкольного работника" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">День дошкольного работника</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/12.jpg" data-title="Грамота участника «Наше Подмосковье», 2016" data-desc="Ежегодная премия Губернатора Московской области «Наше Подмосковье», Солнечногорский район.">
-                    <img src="images/awards/12.jpg" alt="Грамота участника премии «Наше Подмосковье», 2016 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Наше Подмосковье», 2016</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/24.jpg" data-title="Диплом участника «Наше Подмосковье», 2018" data-desc="Проект «Мир вокруг нас», категория «Инициатива», Солнечногорский район.">
-                    <img src="images/awards/24.jpg" alt="Диплом участника премии «Наше Подмосковье» за проект «Мир вокруг нас», 2018 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Мир вокруг нас», 2018</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/10.jpg" data-title="Благодарственное письмо, 2017" data-desc="Управление образования. За активную творческую деятельность в конкурсе «Детский проект — 2017».">
-                    <img src="images/awards/10.jpg" alt="Благодарственное письмо управления образования за конкурс «Детский проект — 2017»" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Детский проект», 2017</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/11.jpg" data-title="Благодарственное письмо, 2018" data-desc="За активное участие и профессиональную компетентность в конкурсе «Детский проект — 2018».">
-                    <img src="images/awards/11.jpg" alt="Благодарственное письмо за конкурс «Детский проект — 2018»" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Детский проект», 2018</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/14.jpg" data-title="Фестиваль «Мы конструируем будущее», 2019" data-desc="Благодарность за подготовку и проведение муниципального фестиваля технического творчества для детей старшего дошкольного возраста.">
-                    <img src="images/awards/14.jpg" alt="Благодарственное письмо за фестиваль «Мы конструируем будущее», 2019 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Мы конструируем будущее», 2019</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/17.jpg" data-title="Призёр муниципального конкурса, 2012" data-desc="Конкурс «На лучшую организацию и содержание речевой предметно-развивающей и игровой среды в ДОУ», номинация «Младший возраст».">
-                    <img src="images/awards/17.jpg" alt="Грамота призёра конкурса развивающей среды, 2012 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Развивающая среда, 2012</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/16.jpg" data-title="«Зимняя сказка», 2016" data-desc="Победитель конкурса зимних построек в номинации «Самая оригинальная», группа № 8.">
-                    <img src="images/awards/16.jpg" alt="Грамота победителя конкурса зимних построек «Зимняя сказка 2016», группа № 8" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Зимняя сказка», группа № 8</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/21.jpg" data-title="«Искорки Солнечногорья», 2015" data-desc="Благодарность заведующего МБДОУ № 10 за подготовку и проведение муниципального творческого конкурса. 3 февраля 2015 г.">
-                    <img src="images/awards/21.jpg" alt="Благодарность за конкурс «Искорки Солнечногорья», 2015 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Искорки Солнечногорья», 2015</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/20.jpg" data-title="«Мини-музей» и «Зелёный уголок», 2014" data-desc="Благодарность заведующего МБДОУ № 10 за 1-е место в конкурсах. 20 июня 2014 г.">
-                    <img src="images/awards/20.jpg" alt="Благодарность за 1-е место в конкурсах «Мини-музей» и «Зелёный уголок», 2014 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Мини-музей», 1-е место, 2014</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/08.jpg" data-title="Конкурс «Доутесса», 2016" data-desc="I место, блиц-олимпиада «Как достичь взаимопонимания с ребёнком?». Дата участия 20.10.2016.">
-                    <img src="images/awards/08.jpg" alt="Диплом I места конкурса «Доутесса», 2016 год" width="436" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Доутесса», I место, 2016</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/15.jpg" data-title="«Изумрудный город», 2017" data-desc="2 место во всероссийском конкурсе. Номинация «Лучшая презентация», работа «Экспериментальная деятельность в ДОУ». Работа от 06.01.2017.">
-                    <img src="images/awards/15.jpg" alt="Диплом 2 места конкурса «Изумрудный город» за презентацию об экспериментальной деятельности" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Изумрудный город», 2 место</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/07.jpg" data-title="Мультфильм «Цветы для мамы», 2019" data-desc="1 место всероссийского конкурса на портале «Воспитателю.ру», номинация «Фильмы, мультфильмы». Заявка от 11.03.2019.">
-                    <img src="images/awards/07.jpg" alt="Диплом 1 места за мультфильм «Цветы для мамы», 2019 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Цветы для мамы», 1 место</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/01.jpg" data-title="«Цветочная клумба „Морской причал“», 2017" data-desc="1 место всероссийского конкурса «Солнечный свет». Номинация «Оформление помещений, территории, участка». 21 августа 2017 г.">
-                    <img src="images/awards/01.jpg" alt="Диплом 1 места за работу «Цветочная клумба Морской причал», 2017 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Морской причал», 1 место</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/02.jpg" data-title="«Солнечный город», 2017" data-desc="1 место всероссийского конкурса «Солнечный свет». Номинация «Моё итоговое мероприятие». 21 августа 2017 г.">
-                    <img src="images/awards/02.jpg" alt="Диплом 1 места за итоговое мероприятие «Солнечный город», 2017 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Солнечный город», 1 место</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/04.jpg" data-title="«Солнышко лучистое!», 2017" data-desc="1 место международного конкурса «Солнечный свет». Номинация «Пусть всегда будет солнце!». 21 августа 2017 г.">
-                    <img src="images/awards/04.jpg" alt="Диплом 1 места за работу «Солнышко лучистое!», 2017 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Солнышко лучистое!», 2017</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/03.jpg" data-title="«Гжель», 2019" data-desc="1 место международного конкурса «Декоративно-прикладное творчество» портала «Солнечный свет». 11 марта 2019 г.">
-                    <img src="images/awards/03.jpg" alt="Диплом 1 места за работу «Гжель», 2019 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Гжель», 1 место, 2019</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/05.jpg" data-title="«Мой папа самый лучший», 2019" data-desc="1 место международного конкурса «День защитника Отечества». 11 марта 2019 г.">
-                    <img src="images/awards/05.jpg" alt="Диплом 1 места за работу «Мой папа самый лучший», 2019 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Мой папа самый лучший»</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/06.jpg" data-title="«Зимняя сказка», 2019" data-desc="1 место международного конкурса «Оформление помещений, территории, участка». 11 марта 2019 г.">
-                    <img src="images/awards/06.jpg" alt="Диплом 1 места за оформление «Зимняя сказка», 2019 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Оформление «Зимняя сказка»</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/18.jpg" data-title="«Бумажная филигрань», 2013" data-desc="Финалист всероссийского конкурса «Живинка», номинация «Дизайн». Портал «Музыкальный сад», 11.11.2013.">
-                    <img src="images/awards/18.jpg" alt="Диплом финалиста конкурса «Живинка» за работу «Бумажная филигрань», 2013 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">«Бумажная филигрань», 2013</span>
-                </button>
-                <button type="button" class="awards__card" data-full="images/awards/19.jpg" data-title="«Вас приветствует группа „Росинка“», 2013" data-desc="Сертификат участника конкурса «Добро пожаловать!» интернет-журнала «Планета Детства». Публикация 12.11.2013.">
-                    <img src="images/awards/19.jpg" alt="Сертификат участника конкурса «Добро пожаловать!» за материал о группе «Росинка», 2013 год" width="424" height="600" loading="lazy" decoding="async">
-                    <span class="awards__caption">Группа «Росинка», 2013</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="faq">
-        <div class="layout__container">
-            <h2 class="section__title">Вопросы</h2>
+            <h2 class="section__title">FAQ</h2>
             <div class="faq__list">
                 <div class="faq__item">
                     <button type="button" class="faq__question" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
@@ -387,7 +560,7 @@
                         <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <div class="faq__answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
-                        <p>В МБДОУ «Детский сад» № 10 комбинированного вида, город Солнечногорск Московской области, улица Вертлинская, дом 21.</p>
+                        <p>Документы называют разные учреждения: МБДОУ «Детский сад» № 10, МБДОУ «Детский сад комбинированного вида № 36» (Солнечногорск) и, в сертификате «Орлята-дошколята» за 2023–2024 учебный год, МБОУ СОШ № 5 с УИОП. Адрес детского сада № 10: улица Вертлинская, дом 21.</p>
                     </div>
                 </div>
                 <div class="faq__item">
@@ -414,7 +587,7 @@
                         <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <div class="faq__answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
-                        <p>Все грамоты и дипломы собраны в разделе на этой странице. Нажмите на документ: он откроется крупно. Закрыть просмотр можно крестиком, клавишей Escape или нажатием рядом с изображением.</p>
+                        <p>Они собраны в разделе «Грамоты и награды» и идут от ранних к поздним. Фильтр оставляет дипломы, грамоты, сертификаты или благодарственные письма. Нажмите на документ, чтобы открыть его крупно. Закрыть просмотр можно крестиком, клавишей Escape или нажатием рядом с изображением.</p>
                     </div>
                 </div>
                 <div class="faq__item">
@@ -450,7 +623,7 @@
                             <p>Воспитатель. В проекте 2017 года — воспитатель I категории.</p>
                         </div>
                     </div>
-                    <p class="schedule__note">График работы учреждения в переданных материалах не указан. Контакты ниже взяты с титульного листа проекта, это телефон и почта детского сада.</p>
+                    <p class="schedule__note">График работы учреждения в переданных материалах не указан. Телефон и почта ниже взяты с титульного листа проекта МБДОУ № 10. В более поздних документах указаны также детский сад № 36 и СОШ № 5, их отдельные телефоны в материалах не приведены.</p>
                 </div>
                 <div class="schedule__calendar">
                     <h3>Связаться с учреждением</h3>
@@ -473,6 +646,7 @@
             <button type="button" class="lightbox__next" aria-label="Вперёд">&#10095;</button>
         </div>
         <div class="lightbox__caption"></div>
+        <p class="lightbox__counter" hidden></p>
         <div class="lightbox__dots"></div>
     </div>
 

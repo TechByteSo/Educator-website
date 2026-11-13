@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Материал — Волкова Анна Викторовна</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles/style.min.css">
+    <link rel="stylesheet" href="view.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-theme="ink-violet-light">
+<script>
+(function () {
+    try {
+        var theme = localStorage.getItem('maxteachcard-theme');
+        if (theme === 'ink-violet-dark') {
+            document.body.setAttribute('data-theme', 'ink-violet-dark');
+            document.documentElement.setAttribute('data-theme', 'ink-violet-dark');
+        }
+    } catch (e) {}
+})();
+</script>
+    <a href="#viewer-main" class="skip-link">Перейти к документу</a>
+    <header class="site-header">
+        <div class="layout__container">
+            <nav class="site-header__nav" aria-label="Просмотр материала">
+                <a href="../index.html#materials" class="site-header__logo">Волкова Анна</a>
+                <div class="theme-switcher" role="group" aria-label="Тема сайта">
+                    <button type="button" class="theme-switcher__btn" data-theme-button="ink-violet-light" aria-label="Светлая тема" aria-pressed="false" title="Светлая тема">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="theme-switcher__btn" data-theme-button="ink-violet-dark" aria-label="Тёмная тема" aria-pressed="false" title="Тёмная тема">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main id="viewer-main" class="viewer" tabindex="-1">
+        <div class="layout__container">
+            <p class="viewer__back"><a href="../index.html#materials"><i class="fas fa-arrow-left" aria-hidden="true"></i> К списку материалов</a></p>
+            <h1 class="viewer__title" id="viewerTitle">Материал</h1>
+            <p class="viewer__format" id="viewerFormat"></p>
+            <div class="viewer__toolbar">
+                <a class="btn btn--primary" id="viewerDownload" href="#">Скачать оригинал</a>
+            </div>
+            <iframe class="viewer__frame" id="viewerFrame" title="Просмотр документа" hidden></iframe>
+            <p class="viewer__missing" id="viewerMissing" hidden>Этот материал не найден. Вернитесь к списку.</p>
+        </div>
+    </main>
+    <script src="catalog.js"></script>
+    <script src="../scripts/script.min.js"></script>
+    <script>
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        var item = (window.MATERIAL_CATALOG || {})[params.get('id')];
+        var title = document.getElementById('viewerTitle');
+        var format = document.getElementById('viewerFormat');
+        var frame = document.getElementById('viewerFrame');
+        var download = document.getElementById('viewerDownload');
+        var missing = document.getElementById('viewerMissing');
+        if (!item) {
+            missing.hidden = false;
+            download.hidden = true;
+            return;
+        }
+        document.title = item.title + ' — Волкова Анна Викторовна';
+        title.textContent = item.title;
+        format.textContent = item.format === 'Word' ? 'Документ Word' : 'Презентация PowerPoint';
+        frame.src = item.pdf;
+        frame.hidden = false;
+        frame.title = item.title;
+        download.href = item.original;
+        download.setAttribute('download', item.download);
+        download.textContent = item.format === 'Word' ? 'Скачать DOCX' : 'Скачать оригинал';
+    })();
+    </script>
+</body>
+</html>

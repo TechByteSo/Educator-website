@@ -106,3 +106,26 @@
         min-height: 220px;
     }
 }
+
+.gallery .slider__container {
+    aspect-ratio: 16 / 10;
+    max-height: min(72vh, 640px);
+    background: rgba(213, 158, 250, 0.18);
+}
+
+.gallery .slider__slide img {
+    object-fit: contain;
+}
+
+.gallery .slider__container .slider__arrow {
+    width: 44px;
+    height: 44px;
+}
+
+@media (max-width: 1024px) {
+    .gallery .slider__container .slider__arrow {
+        display: flex !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+}
