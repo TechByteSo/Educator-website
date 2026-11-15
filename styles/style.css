@@ -2997,8 +2997,7 @@ footer {
     border-color: transparent;
 }
 
-.awards__card.is-hidden,
-.awards__group[hidden] {
+.awards__card.is-hidden {
     display: none;
 }
 
@@ -3009,12 +3008,6 @@ footer {
 @keyframes awardIn {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: none; }
-}
-
-.awards__group {
-    grid-column: 1 / -1;
-    margin: 0.5rem 0 0;
-    font-size: 1.15rem;
 }
 
 .materials {
@@ -3097,12 +3090,36 @@ footer {
 
 .materials__panel {
     display: grid;
-    gap: 1rem;
-    padding: 0 1.1rem 1.1rem;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.25s ease, visibility 0s linear 0.25s;
 }
 
-.materials__panel[hidden] {
-    display: none;
+.materials__cat.is-open .materials__panel {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.materials__panel-content {
+    display: grid;
+    gap: 1rem;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.materials__format {
+    margin-inline: 1.1rem;
+}
+
+.materials__format:last-child {
+    margin-bottom: 1.1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .materials__panel {
+        transition: none;
+    }
 }
 
 .materials__format h3 {

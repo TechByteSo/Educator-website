@@ -825,8 +825,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const show = filter === 'all' || card.dataset.type === filter;
                 card.classList.toggle('is-hidden', !show);
             });
-            const group = document.querySelector('#awardsGrid .awards__group');
-            if (group) group.hidden = filter !== 'all' && filter !== 'gramota';
         });
     });
 
@@ -836,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!panel) return;
             const willOpen = button.getAttribute('aria-expanded') !== 'true';
             button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-            panel.hidden = !willOpen;
+            panel.inert = !willOpen;
             const cat = button.closest('.materials__cat');
             if (cat) cat.classList.toggle('is-open', willOpen);
         });

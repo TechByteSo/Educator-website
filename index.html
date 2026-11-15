@@ -146,7 +146,7 @@
         <div class="layout__container">
             <h2 class="section__title">О воспитателе</h2>
             <div class="about__profile">
-                <img src="images/gallery/01.jpg" alt="Волкова Анна Викторовна с детьми на прогулке" class="about__photo" width="600" height="400" loading="lazy" decoding="async">
+                <img src="images/webp/gallery/about.webp" alt="Волкова Анна Викторовна с детьми на прогулке" class="about__photo" width="600" height="400" loading="lazy" decoding="async">
                 <div class="about__bio">
                     <h3 class="about__name">Волкова Анна Викторовна</h3>
                     <p>Воспитатель. В документах разных лет указаны МБДОУ «Детский сад» № 10 и МБДОУ «Детский сад комбинированного вида № 36» в Солнечногорске. Сертификат проекта «Орлята-дошколята» за 2023–2024 учебный год выдан воспитателю МБОУ СОШ № 5 с УИОП.</p>
@@ -201,8 +201,12 @@
                     <img src="images/webp/awards/22.webp" alt="Грамота главы Солнечногорского муниципального района, 2015 год" loading="lazy" decoding="async">
                     <span class="awards__caption">Грамота главы района, 2015</span>
                 </button>
+                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/09.webp" data-title="Муниципальная грамота КНО г. Солнечногорска, 2015" data-desc="Комитет по народному образованию г. Солнечногорска. За добросовестный труд и успешную работу воспитателя МБДОУ № 10. Ко Дню дошкольного работника, 2015 год.">
+                    <img src="images/webp/awards/09.webp" alt="Муниципальная грамота КНО г. Солнечногорска, 2015 год" loading="lazy" decoding="async">
+                    <span class="awards__caption">Муниципальная грамота КНО, 2015</span>
+                </button>
                 <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/vospitatel-goda.webp" data-title="Диплом «Воспитатель года Солнечногорья»" data-desc="Призёр муниципального конкурса «Педагог года» в номинации «Воспитатель года Солнечногорья — 2016», грант Комитета по народному образованию. На документе указан 2015 год.">
-                    <img src="images/webp/awards/vospitatel-goda.webp" alt="Диплом призёра конкурса «Воспитатель года Солнечногорья», 2015 год" loading="lazy" decoding="async">
+                    <img src="images/webp/awards/vospitatel-goda-thumb.webp" alt="Диплом призёра конкурса «Воспитатель года Солнечногорья», 2015 год" loading="lazy" decoding="async">
                     <span class="awards__caption">«Воспитатель года», 2015</span>
                 </button>
                 <button type="button" class="awards__card" data-award data-type="diploma" data-full="images/webp/awards/08.webp" data-title="«Доутесса», I место, 2016" data-desc="I место, блиц-олимпиада «Как достичь взаимопонимания с ребёнком?». Дата участия 20.10.2016.">
@@ -297,11 +301,6 @@
                     <img src="images/webp/awards/cert-orlyata.webp" alt="Сертификат проекта «Орлята-дошколята» за 2023–2024 учебный год" loading="lazy" decoding="async">
                     <span class="awards__caption">«Орлята-дошколята», 2023–2024</span>
                 </button>
-                <h3 class="awards__group">Дата не указана</h3>
-                <button type="button" class="awards__card" data-award data-type="gramota" data-full="images/webp/awards/09.webp" data-title="Грамота ко Дню дошкольного работника" data-desc="Комитет по народному образованию. За добросовестный труд и успешную работу воспитателя МБДОУ № 10. Год на этой копии не читается однозначно, поэтому документ стоит в группе «Дата не указана».">
-                    <img src="images/webp/awards/09.webp" alt="Грамота за добросовестный труд ко Дню дошкольного работника. Дата на публикуемой подписи не установлена" loading="lazy" decoding="async">
-                    <span class="awards__caption">Дата не указана</span>
-                </button>
             </div>
         </div>
     </section>
@@ -320,20 +319,22 @@
                         </span>
                         <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="materials__panel" id="materials-lessons" hidden>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=park">Конспект занятия «Парк развлечений»</a></li>
-                                <li><a href="documents/view.html?id=solnechny">Конспект занятия «Солнечный город»</a></li>
-                                <li><a href="documents/view.html?id=progulka">Прогулка в весенний лес</a></li>
-                            </ul>
-                        </div>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=ten">Дидактическая игра «Найди тень»</a></li>
-                            </ul>
+                    <div class="materials__panel" id="materials-lessons" inert>
+                        <div class="materials__panel-content">
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=park">Конспект занятия «Парк развлечений»</a></li>
+                                    <li><a href="documents/view.html?id=solnechny">Конспект занятия «Солнечный город»</a></li>
+                                    <li><a href="documents/view.html?id=progulka">Прогулка в весенний лес</a></li>
+                                </ul>
+                            </div>
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=ten">Дидактическая игра «Найди тень»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -346,19 +347,21 @@
                         </span>
                         <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="materials__panel" id="materials-projects" hidden>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=nikto">Проект «Никто не забыт, ничто не забыто»</a></li>
-                                <li><a href="documents/view.html?id=multfilm">Проект «Создание мультфильма»</a></li>
-                            </ul>
-                        </div>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=kukly">Проект «Кукольный салон моды»</a></li>
-                            </ul>
+                    <div class="materials__panel" id="materials-projects" inert>
+                        <div class="materials__panel-content">
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-word" aria-hidden="true"></i> Word</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=nikto">Проект «Никто не забыт, ничто не забыто»</a></li>
+                                    <li><a href="documents/view.html?id=multfilm">Проект «Создание мультфильма»</a></li>
+                                </ul>
+                            </div>
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=kukly">Проект «Кукольный салон моды»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -371,15 +374,17 @@
                         </span>
                         <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="materials__panel" id="materials-talks" hidden>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=zdorovie">Использование здоровьеформирующих технологий</a></li>
-                                <li><a href="documents/view.html?id=experiment">Интерактивное оборудование на занятиях по экспериментальной деятельности</a></li>
-                                <li><a href="documents/view.html?id=lego-stem">Выступление: LEGO-конструирование и робототехника</a></li>
-                                <li><a href="documents/view.html?id=robot">Робототехника в детском саду</a></li>
-                            </ul>
+                    <div class="materials__panel" id="materials-talks" inert>
+                        <div class="materials__panel-content">
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=zdorovie">Использование здоровьеформирующих технологий</a></li>
+                                    <li><a href="documents/view.html?id=experiment">Интерактивное оборудование на занятиях по экспериментальной деятельности</a></li>
+                                    <li><a href="documents/view.html?id=lego-stem">Выступление: LEGO-конструирование и робототехника</a></li>
+                                    <li><a href="documents/view.html?id=robot">Робототехника в детском саду</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -392,12 +397,14 @@
                         </span>
                         <i class="fas fa-chevron-down materials__chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="materials__panel" id="materials-parents" hidden>
-                        <div class="materials__format">
-                            <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
-                            <ul>
-                                <li><a href="documents/view.html?id=roditeli">Родительское собрание «Скоро в школу»</a></li>
-                            </ul>
+                    <div class="materials__panel" id="materials-parents" inert>
+                        <div class="materials__panel-content">
+                            <div class="materials__format">
+                                <h3><i class="fas fa-file-powerpoint" aria-hidden="true"></i> PowerPoint</h3>
+                                <ul>
+                                    <li><a href="documents/view.html?id=roditeli">Родительское собрание «Скоро в школу»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </article>
