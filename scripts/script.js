@@ -14,8 +14,8 @@ function scrollToHashTarget(el) {
 (function initThemeSwitcher() {
     const THEME_KEY = 'maxteachcard-theme';
     const themes = {
-        'ink-violet-light': { color: '#f4fbfa' },
-        'ink-violet-dark': { color: '#071816' }
+        'ink-violet-light': { color: '#f9f2fe' },
+        'ink-violet-dark': { color: '#190d23' }
     };
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     const themeButtons = document.querySelectorAll('[data-theme-button]');
@@ -173,10 +173,6 @@ function syncGalleryStatus(sliderId, index, total) {
     if (sliderId !== 'galleryTrack') return;
     const status = document.getElementById('galleryStatus');
     if (status) status.textContent = (index + 1) + ' из ' + total;
-    const activeDot = document.querySelector('#galleryDots .slider__dot--active');
-    if (activeDot && typeof activeDot.scrollIntoView === 'function') {
-        activeDot.scrollIntoView({ block: 'nearest', inline: 'center' });
-    }
 }
 
 function changeSlide(sliderId, direction) {
