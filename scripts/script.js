@@ -1,14 +1,21 @@
-// Плавная прокрутка к якорю с учётом scroll-padding-top (надёжнее scrollIntoView в части браузеров)
+const siteHeader = document.querySelector(".site-header");
+if (siteHeader) {
+    const updateHeaderHeight = () => {
+        const height = Math.ceil(siteHeader.getBoundingClientRect().height);
+        document.documentElement.style.setProperty("--site-header-height", height + "px");
+    };
+    updateHeaderHeight();
+    if ("ResizeObserver" in window) {
+        new ResizeObserver(updateHeaderHeight).observe(siteHeader, { box: "border-box" });
+    } else {
+        window.addEventListener("resize", updateHeaderHeight);
+    }
+}
+
 function scrollToHashTarget(el) {
     if (!el) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) {
-        el.scrollIntoView({ behavior: 'auto', block: 'start' });
-        return;
-    }
-    const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 64;
-    const y = el.getBoundingClientRect().top + window.pageYOffset - pad;
-    window.scrollTo({ top: Math.max(0, y), left: 0, behavior: 'smooth' });
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ behavior: reduceMotion ? "instant" : "smooth", block: "start" });
 }
 
 (function initThemeSwitcher() {
@@ -839,37 +846,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (cat) cat.classList.toggle('is-open', willOpen);
         });
     });
-
-    const awardsValue = document.getElementById('statAwards');
-    const awardCards = document.querySelectorAll('#awardsGrid [data-award]');
-    if (awardsValue && awardCards.length) {
-        const target = awardCards.length;
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const paint = () => {
-            if (reduce) {
-                awardsValue.textContent = String(target);
-                return;
-            }
-            const started = performance.now();
-            const tick = (now) => {
-                const progress = Math.min(1, (now - started) / 700);
-                awardsValue.textContent = String(Math.round(target * progress));
-                if (progress < 1) requestAnimationFrame(tick);
-            };
-            requestAnimationFrame(tick);
-        };
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                if (entries.some((entry) => entry.isIntersecting)) {
-                    paint();
-                    observer.disconnect();
-                }
-            }, { threshold: 0.5 });
-            observer.observe(awardsValue);
-        } else {
-            paint();
-        }
-    }
 });
 
 document.addEventListener('keydown', function (e) {

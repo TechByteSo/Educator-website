@@ -104,7 +104,7 @@ body[data-theme="ink-violet-dark"] {
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem; /* учёт высоты фиксированного header при якорной прокрутке */
+    scroll-padding-top: var(--site-header-height, 4rem);
 }
 
 body {
@@ -652,6 +652,12 @@ section:first-of-type {
     z-index: 1;
 }
 
+@media (min-width: 768px) {
+    .about .layout__container {
+        max-width: min(1560px, 96vw);
+    }
+}
+
 .about__icons {
     position: absolute;
     top: 0;
@@ -711,7 +717,6 @@ section:first-of-type {
     display: flex;
     align-items: center;
     gap: 3rem;
-    max-width: clamp(320px, 85vw, 1000px);
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -741,6 +746,8 @@ section:first-of-type {
 
 .about .about__bio p {
     margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
     font-size: 1.1rem;
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.96);
@@ -1861,9 +1868,6 @@ footer {
 }
 
 @media (max-width: 767px) {
-    html {
-        scroll-padding-top: 4.5rem; /* учёт высоты header в бургер-режиме при якорной прокрутке */
-    }
     main {
         padding-top: 4.5rem; /* первая секция не заходит под header в бургер-режиме */
     }
@@ -1979,7 +1983,6 @@ footer {
 
     .site-header__logo {
         font-size: clamp(1.05rem, 2vw, 1.3rem);
-        max-width: 22vw;
     }
 
     .site-header__nav .site-header__list {
@@ -2092,6 +2095,7 @@ footer {
         justify-content: flex-start;
     }
     .about__profile {
+        max-width: clamp(320px, 85vw, 1000px);
         flex-direction: column;
         text-align: center;
     }
@@ -2971,6 +2975,18 @@ footer {
     cursor: default;
 }
 
+.stats__item--category {
+    container-type: inline-size;
+}
+
+.stats__item--category .stats__value {
+    font-size: clamp(1.35rem, 17cqi, 2.5rem);
+}
+
+.stats__item--category .stats__label {
+    overflow-wrap: anywhere;
+}
+
 .awards__filters {
     display: flex;
     flex-wrap: wrap;
@@ -3013,6 +3029,13 @@ footer {
 .materials {
     position: relative;
     overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .materials .section__title {
+        font-size: clamp(1.5rem, 6vw, 1.75rem);
+        overflow-wrap: anywhere;
+    }
 }
 
 .materials .layout__container {
@@ -3253,7 +3276,7 @@ footer {
         z-index: 30;
     }
     .site-header__nav .site-header__list.site-header__list--open {
-        max-height: 85vh;
+        max-height: calc(100dvh - var(--site-header-height, 4rem));
         overflow: auto;
         opacity: 1;
         visibility: visible;
